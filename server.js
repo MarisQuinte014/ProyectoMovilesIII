@@ -14,7 +14,7 @@ const DB_URI = process.env.DB_URI;
 //mongodb://localhost:27017/myapp'
 //mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 let db = "dbtienda"
-mongoose.connect(`mongodb+srv://marisquinte15:OmaNfIOao3b5CZ7z@cluster0.brlohzk.mongodb.net/?retryWrites=true&w=majority/${db}`,{useNewUrlParser:true})
+mongoose.connect(`mongodb+srv://marisquinte15:OmaNfIOao3b5CZ7z@cluster0.brlohzk.mongodb.net/?retryWrites=true&w=majority/${db}`,{useNewUrlParser:true, useUnifiedTopology: true})
     .then(db => console.log("Conexión a BD exitosa"))
     .catch(error => console.log("Error al conectarse a la BD" + error));
 
