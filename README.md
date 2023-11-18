@@ -56,12 +56,12 @@ La última sentencia nos crea un archivo **`package.json`** con la metainformaci
 
 El archivo **`package.json`** es el archivo de gestión de proyecto y dependencias. En él podremos editar el nombre del autor, la versión, el tipo de licencia, etc.
 
-Una parte muy importante es indicar el punto de entrada. En este proyecto será el archivo **`server.js`**, que crearemos más adelante.
+Una parte muy importante es indicar el punto de entrada. En este proyecto será el archivo **`index.js`**, que crearemos más adelante.
 
 Para definir dicho punto de entrada, lo hacemos con la línea:
 
 ```
-  "main": "server.js",
+  "main": "index.js",
 ```
 
 El archivo `package.json` tendrá una apariencia semejante a la siguiente:
@@ -73,11 +73,11 @@ El archivo `package.json` tendrá una apariencia semejante a la siguiente:
   "description": "Backend of a Fullstack webapp",
   "author": "jamj2000 at google dot com",
   "license": "GPL",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "webapp",
@@ -90,10 +90,10 @@ El archivo `package.json` tendrá una apariencia semejante a la siguiente:
 También hemos modificado una de las líneas de `scripts`. En concreto:
 
 ```
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
 ```
 
-Esta línea indica que cuando ejecutemos `npm run dev` en el terminal, lo que se va a ejecutar en última instancia es el comando `nodemon server.js`.  
+Esta línea indica que cuando ejecutemos `npm run dev` en el terminal, lo que se va a ejecutar en última instancia es el comando `nodemon index.js`.  
 
 NOTA: Los scripts se ejecutan desde el terminal de texto con `npm run` *nombre_script*.
 
@@ -102,7 +102,7 @@ NOTA: `nodemon` es un paquete de Node.js que ejecuta node en modo monitor, es de
 
 ## Servidor web básico
 
-En el archivo **[`server.js`](server.js)** escribiremos el código para crear nuestro propio servidor web. En su versión mínima, solamente son necesarias 3 líneas.
+En el archivo **[`index.js`](index.js)** escribiremos el código para crear nuestro propio servidor web. En su versión mínima, solamente son necesarias 3 líneas.
 
 
 ```javascript
@@ -156,11 +156,11 @@ Si echamos un vistazo al archivo **`package.json`** veremos que dichos paquetes 
   "description": "Backend of a Fullstack webapp",
   "author": "jamj2000 at google dot com",
   "license": "GPL",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",    
+    "start": "node index.js",    
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "webapp",
@@ -284,7 +284,7 @@ const apiRoutes = require('./routes');
 app.use('/api', apiRoutes);
 ```
 
-Todo el código fuente del servidor está disponible en el archivo **[`server.js`](server.js)**.
+Todo el código fuente del servidor está disponible en el archivo **[`index.js`](index.js)**.
 
 
 ## Rutas
