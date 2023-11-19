@@ -18,6 +18,7 @@ mongoose.connect(`mongodb+srv://marisquinte15:OmaNfIOao3b5CZ7z@cluster0.brlohzk.
     .then(db => console.log("Conexión a BD exitosa"))
     .catch(error => console.log("Error al conectarse a la BD" + error));
 
+    
 
 // MIDDLEWARE
 app.use(cors());            // Soporte para CORS
