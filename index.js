@@ -7,18 +7,18 @@ const apiRoutes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DB_URI = process.env.DB_URI;
-
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}?retryWrites=true&w=majority/${DB_NAME}`;
 
 // CONEXIÓN A BASE DE DATOS
 //mongodb://localhost:27017/myapp'
 //mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 let db = "dbtienda"
-mongoose.connect(`mongodb+srv://marisquinte15:OmaNfIOao3b5CZ7z@cluster0.brlohzk.mongodb.net/?retryWrites=true&w=majority/${db}`,{useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology: true})
     .then(db => console.log("Conexión a BD exitosa"))
     .catch(error => console.log("Error al conectarse a la BD" + error));
 
-    
+
 
 // MIDDLEWARE
 app.use(cors());            // Soporte para CORS
